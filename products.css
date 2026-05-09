@@ -1,0 +1,25 @@
+/* MAISON DRESSÉ — css/products.css */
+.filters { display:flex; justify-content:center; gap:8px; margin-bottom:56px; flex-wrap:wrap; }
+.f-btn { background:none; border:1px solid rgba(255,255,255,.12); color:var(--light-grey); padding:10px 28px; font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all var(--ease); }
+.f-btn:hover, .f-btn.active { background:var(--rose); border-color:var(--rose); color:var(--white); }
+.prod-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+.prod-card { background:var(--off-black); position:relative; overflow:hidden; transition:transform var(--ease); }
+.prod-card:hover { transform:translateY(-4px); }
+.prod-img { position:relative; padding-top:140%; overflow:hidden; background:var(--charcoal); }
+.prod-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .8s ease; }
+.prod-card:hover .prod-img img { transform:scale(1.07); }
+.badge { position:absolute; top:14px; left:14px; background:var(--rose); color:var(--white); font-size:8px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; z-index:2; }
+.prod-actions { position:absolute; bottom:0; left:0; right:0; display:flex; flex-direction:column; gap:1px; transform:translateY(100%); transition:transform .4s ease; z-index:3; }
+.prod-card:hover .prod-actions { transform:translateY(0); }
+.btn-cart { background:var(--rose); color:var(--white); font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:14px; border:none; cursor:pointer; width:100%; transition:background var(--ease); }
+.btn-cart:hover { background:var(--rose-light); }
+.btn-wish { background:rgba(8,8,8,.85); color:var(--silver); font-size:10px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; padding:10px; border:none; cursor:pointer; width:100%; transition:all var(--ease); }
+.btn-wish:hover { color:var(--rose); }
+.prod-info { padding:20px 16px; }
+.prod-brand { font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--rose); margin-bottom:6px; display:block; }
+.prod-name { font-family:var(--font-serif); font-size:17px; font-weight:400; color:var(--white); margin-bottom:4px; line-height:1.3; font-style:italic; }
+.prod-cat { font-size:11px; color:var(--light-grey); margin-bottom:10px; text-transform:capitalize; }
+.prod-price { font-size:16px; font-weight:400; color:var(--white); }
+@media(max-width:1200px){ .prod-grid{grid-template-columns:repeat(3,1fr)} }
+@media(max-width:900px){ .prod-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:480px){ .prod-grid{grid-template-columns:1fr} }

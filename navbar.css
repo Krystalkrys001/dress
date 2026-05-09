@@ -1,0 +1,40 @@
+/* MAISON DRESSÉ — css/navbar.css */
+.navbar { position:sticky; top:var(--ann-h); z-index:1000; display:flex; align-items:center; justify-content:space-between; padding:0 40px; height:var(--nav-h); background:var(--black); border-bottom:1px solid rgba(255,255,255,.06); transition:background var(--ease), box-shadow var(--ease); }
+.navbar.scrolled { background:rgba(8,8,8,.96); box-shadow:0 2px 30px rgba(0,0,0,.6); backdrop-filter:blur(12px); }
+.nav-logo { font-family:var(--font-serif); font-size:22px; font-weight:600; letter-spacing:5px; color:var(--white); position:absolute; left:50%; transform:translateX(-50%); transition:color var(--ease); white-space:nowrap; font-style:italic; }
+.nav-logo:hover { color:var(--rose); }
+.nav-left, .nav-right { display:flex; align-items:center; gap:32px; }
+.nav-links { display:flex; align-items:center; gap:36px; }
+.nav-links li { position:relative; }
+.nav-links a { font-size:11px; font-weight:400; letter-spacing:2.5px; text-transform:uppercase; color:var(--silver); transition:color var(--ease); padding:8px 0; display:block; }
+.nav-links a:hover { color:var(--rose); }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--rose); transition:width var(--ease); }
+.nav-links a:hover::after { width:100%; }
+.nav-icon { color:var(--silver); display:flex; align-items:center; justify-content:center; position:relative; transition:color var(--ease); }
+.nav-icon:hover { color:var(--rose); }
+.cart-badge { position:absolute; top:-8px; right:-8px; background:var(--rose); color:var(--white); font-size:9px; font-weight:700; width:16px; height:16px; border-radius:50%; display:none; align-items:center; justify-content:center; }
+.cart-badge.on { display:flex; }
+.hamburger { display:none; flex-direction:column; gap:5px; padding:4px; }
+.hamburger span { display:block; width:22px; height:1px; background:var(--white); transition:all var(--ease); }
+.has-drop { position:relative; }
+.megadrop { position:absolute; top:calc(100% + 24px); left:50%; transform:translateX(-50%); background:var(--off-black); border:1px solid rgba(201,132,122,.2); padding:32px; display:grid; grid-template-columns:repeat(3,160px); opacity:0; pointer-events:none; transition:opacity var(--ease), top var(--ease); white-space:nowrap; z-index:200; }
+.has-drop:hover .megadrop { opacity:1; pointer-events:all; top:calc(100% + 10px); }
+.drop-col { padding:0 24px; border-right:1px solid rgba(255,255,255,.06); }
+.drop-col:last-child { border-right:none; }
+.drop-col h4 { font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--rose); margin-bottom:16px; }
+.drop-col a { display:block; font-size:13px; font-weight:300; color:var(--silver); padding:6px 0; transition:all var(--ease); }
+.drop-col a:hover { color:var(--rose); padding-left:8px; }
+.search-ov { position:fixed; inset:0; background:rgba(0,0,0,.97); z-index:2000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity var(--ease); }
+.search-ov.open { opacity:1; pointer-events:all; }
+.search-ov > button { position:absolute; top:30px; right:40px; font-size:24px; color:var(--silver); cursor:pointer; transition:color var(--ease); }
+.search-ov > button:hover { color:var(--rose); }
+.search-inner { width:100%; max-width:700px; padding:0 40px; }
+.search-inner input { width:100%; background:none; border:none; border-bottom:1px solid rgba(255,255,255,.3); color:var(--white); font-family:var(--font-serif); font-size:clamp(28px,5vw,54px); font-weight:400; padding:20px 0; outline:none; caret-color:var(--rose); }
+.search-inner input::placeholder { color:rgba(255,255,255,.2); }
+#searchRes { margin-top:32px; display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:16px; }
+.s-result { cursor:pointer; }
+.s-result img { width:100%; aspect-ratio:2/3; object-fit:cover; margin-bottom:8px; }
+.s-result .sr-brand { font-size:9px; letter-spacing:2px; color:var(--rose); display:block; }
+.s-result .sr-name { font-family:var(--font-serif); font-size:14px; color:var(--white); }
+.s-result .sr-price { font-size:12px; color:var(--light-grey); margin-top:4px; }
+@media(max-width:900px) { .hamburger{display:flex} .nav-links{position:fixed;top:calc(var(--ann-h) + var(--nav-h));left:0;width:100%;height:calc(100vh - var(--ann-h) - var(--nav-h));background:var(--off-black);flex-direction:column;align-items:flex-start;padding:40px 32px;gap:0;transform:translateX(-100%);transition:transform var(--ease-slow);overflow-y:auto;z-index:999} .nav-links.open{transform:translateX(0)} .nav-links li{width:100%} .nav-links a{font-size:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06)} .megadrop{display:none} .navbar{padding:0 24px} .nav-logo{font-size:18px;letter-spacing:3px} }
